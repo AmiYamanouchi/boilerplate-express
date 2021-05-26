@@ -1,14 +1,18 @@
 var express = require('express');
 var app = express();
 
-console.log("Hello World")
+// #1
+// console.log("Hello World")
 
+// #2
+// app.get("/", (req, res) => {
+//     res.send("Hello Express");
+//   });
 
-app.get("/", (req, res) => {
-    res.send("Hello Express");
+// #3
+  app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/public/index.html");
   });
-
-
 
 
 
