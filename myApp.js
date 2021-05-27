@@ -28,13 +28,14 @@ app.get('/json',(req, res)=> res.json({"message": response()}))
 
 
 // #6
-const upper = process.env.MESSAGE_STYLE === "uppercase";
-const messageFilter = upper ? x => x.toUpperCase() : x => x;
-app.get("/json", function(req, res) {
-    res.json({
-        message: messageFilter("Hello json")
-    });
-});
+const response = ()=>{
+    let resp = " "
+  if (process.env.MESSAGE_STYLE === 'uppercase'){
+   return resp = "Hello json".toUpperCase();
+  }else{
+    return resp = "Hello json";
+  }
+  }
 
 
 
