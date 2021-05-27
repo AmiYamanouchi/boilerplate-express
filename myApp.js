@@ -15,7 +15,10 @@ var app = express();
 //   });
 
 // #4
-app.use(express.static(__dirname + "/"));
+const absolutePath = __dirname + "/views/index.html"
+app.get('/', (req, res, next) => {
+    res.sendFile(absolutePath)
+})
 
 
 
