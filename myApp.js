@@ -2,6 +2,11 @@ var express = require('express');
 var app = express();
 const path = require("path");
 
+// #4
+// use express -> npm i  
+const assetPath = path.join(__dirname, "/");
+console.log(assetPath);
+app.use(express.static(assetPath));
 
 // #1
 // console.log("Hello World")
@@ -17,11 +22,7 @@ const absolutePath = path.join(__dirname, "views", "index.html");
     res.sendFile(absolutePath);
   });
 
-// #4
-// use express -> npm i  
-const assetPath = path.join(__dirname, "/");
-console.log(assetPath);
-app.use(express.static(assetPath));
+
 
 
 
