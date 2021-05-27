@@ -10,9 +10,9 @@ var app = express();
 //   });
 
 // #3
-//   app.get("/", function(req, res) {
-//     res.sendFile(__dirname + "/views/index.html");
-//   });
+  app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/views/index.html");
+  });
 
 // #4
 const assetPath = path.join(__dirname, "public");
