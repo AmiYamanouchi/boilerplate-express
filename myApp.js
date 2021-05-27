@@ -15,10 +15,9 @@ var app = express();
 //   });
 
 // #4
-const absolutePath = __dirname + "/views/index.html"
-app.get('/', (req, res, next) => {
-    res.sendFile(absolutePath)
-})
+const assetPath = path.join(__dirname, "public");
+app.use(express.static(assetPath));
+
 
 
 
