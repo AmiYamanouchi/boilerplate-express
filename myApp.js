@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 const path = require("path");
+const bodyParser = require('body-parser')
 
 // #4
 // use express -> npm i  
@@ -24,7 +25,7 @@ const absolutePath = path.join(__dirname, "views", "index.html");
 
 
 // #5
-app.get('/json',(req, res)=> res.json({"message": response()}))
+// app.get('/json',(req, res)=> res.json({"message": response()}))
 
 
 // #6
