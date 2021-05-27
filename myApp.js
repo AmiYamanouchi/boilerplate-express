@@ -19,7 +19,8 @@ const absolutePath = path.join(__dirname, "views", "index.html");
 
 // #4
 // use express -> npm i  
-const assetPath = path.join(__dirname, "public");
+const assetPath = path.join(__dirname, "/");
+console.log(assetPath);
 app.use(express.static(assetPath));
 
 
