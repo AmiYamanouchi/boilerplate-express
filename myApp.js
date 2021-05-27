@@ -3,6 +3,9 @@ var app = express();
 const path = require("path");
 const bodyParser = require('body-parser')
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 // #4
 // use express -> npm i  
 const assetPath = path.join(__dirname, "/");
@@ -25,7 +28,7 @@ const absolutePath = path.join(__dirname, "views", "index.html");
 
 
 // #5
-// app.get('/json',(req, res)=> res.json({"message": response()}))
+app.get('/json',(req, res)=> res.json({"message": response()}))
 
 
 // #6
