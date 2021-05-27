@@ -23,9 +23,19 @@ const absolutePath = path.join(__dirname, "views", "index.html");
   });
 
 
+// #5
+app.get('/json',(req, res)=> res.json({"message": response()}))
 
 
-
+// #6
+const response = ()=>{
+   let resp = " "
+ if (process.env.MESSAGE_STYLE === 'uppercase'){
+  return resp = "Hello json".toUpperCase();
+ }else{
+   return resp = "Hello json";
+ }
+ }
 
 
 
