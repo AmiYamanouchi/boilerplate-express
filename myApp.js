@@ -35,7 +35,7 @@ app.get("/json", function (req, res) {
     } else {
       greeting = "Hello json";
     }
-
+})
 
 
 
