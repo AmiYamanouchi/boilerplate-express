@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+const path = require("path");
 
 
 // #1
@@ -11,23 +12,14 @@ var app = express();
 //   });
 
 // #3
-//   app.get("/", function(req, res) {
-//     res.sendFile(absolutePath);
-//   });
+const absolutePath = path.join(__dirname, "views", "index.html");
+  app.get("/", function(req, res) {
+    res.sendFile(absolutePath);
+  });
 
 // #4
-// const assetPath = path.join(__dirname, "public");
-// app.use(express.static(assetPath));
-
-var absolutePath = __dirname + "/views/index.html"
-console.log(absolutePath);
-
-
-app.get('/', (req, res, next) => {
-  // res.send("Hello Express")
-  res.sendFile(absolutePath)
-})
-
+const assetPath = path.join(__dirname, "public");
+app.use(express.static(assetPath));
 
 
 
