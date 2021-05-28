@@ -57,7 +57,6 @@ const response = ()=>{
 }
 
 // #8
-
 app.get(
     "/now",
     function(req, res, next) {
@@ -70,6 +69,24 @@ app.get(
         });
     }
 );
+
+// #9
+app.get("/:word/echo", function(req, res) {
+    const word = req.params.word;
+    res.json({
+        echo: word
+    });
+});
+
+// #10
+app.get("/name", function(req, res) {
+    const first = req.query.first;
+    const last = req.query.last;
+    res.json({
+        name: `${first} ${last}`
+    })
+});
+
 
 
 
