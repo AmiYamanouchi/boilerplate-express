@@ -6,6 +6,12 @@ const bodyParser = require('body-parser')
 const dotenv = require("dotenv");
 dotenv.config();
 
+// #7
+app.use(function(req, res, next) {
+    console.log(`${req.method} ${req.path} - ${req.ip}`);
+    next();
+});
+
 // #4
 // use express -> npm i  
 const assetPath = path.join(__dirname, "/");
@@ -50,9 +56,20 @@ const response = ()=>{
   }
 }
 
+// #8
 
-
-
+app.get(
+    "/now",
+    function(req, res, next) {
+        req.time = new Date().toString();
+        next();
+    },
+    function(req, res) {
+        res.send({
+            time: req.time
+        });
+    }
+);
 
 
 
